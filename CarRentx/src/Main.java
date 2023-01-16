@@ -10,5 +10,6 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+        Menu.mainMenu();
     }
 }
