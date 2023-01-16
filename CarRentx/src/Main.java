@@ -1,7 +1,7 @@
 import java.io.FileNotFoundException;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         startApplication();
     }
     private static void startApplication(){
@@ -10,6 +10,6 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        Menu.mainMenu();
+        ApplicationLoop.applicationLoop();
     }
 }
