@@ -2,22 +2,20 @@ import java.util.Scanner;
 
 public class ApplicationLoop {
     public static final Scanner dataFromUser = new Scanner(System.in);
+
     public static void applicationLoop(){
         boolean stopApplication = false;
         while (!stopApplication) {
-            Menu.mainMenu();
+            View.viewMainMenu();
             String select = dataFromUser.nextLine();
             switch (select){
-                case "2" -> viewAvailableCars();
+                case "1" -> LogIn.LogInToAccount();
+                case "2" -> View.viewAvailableCars();
                 case "3" -> stopApplication = true;
+                default -> System.out.println(View.DEFAULT_MESSAGE);
             }
         }
-    }
-    public static void viewAvailableCars(){
-        for (int i = 0; i < DataBase.carsForRent.size(); i++) {
-            System.out.println(i + 1 + ". " + DataBase.carsForRent.get(i) + ".");
-        }
-        System.out.println();
-
+        DataBase.saveData();
+        View.print("Shutting Down.");
     }
 }
