@@ -1,4 +1,0 @@
-Select one of the available option:
-Login
-View available cars
-Close the program
